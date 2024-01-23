@@ -64,7 +64,7 @@
                 <img src="image/ans.gif" alt="Cute animated illustration">
             </div>
             <div class="gif_container qrimage">
-                <img src="image/siddharth_gabu_qr.png" onclick="window.open('https://www.instagram.com/siddharth_gabu/')" alt="Insta Profile QR code">
+                <img src="image/niles_jamex_qr.png" onclick="window.open('https://www.instagram.com/niles_jamex/')" alt="Insta Profile QR code">
             </div>
             <video id="ansvideo" width="0" height="0" controls>
                 <source src="image/KidsCheering.mp4" 
@@ -73,7 +73,7 @@
         </div>
     </body> 
     <script>
-
+        console.log(window)
         var debounce = function(fn, t = 1000) {
             let timer;
             return function(...args) {
@@ -97,8 +97,9 @@
         }
 
         function moveButton() {
-            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth);
-            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
+            var x =( Math.random() * window.innerWidth) * 0.8;
+            console.log(x)
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').clientHeight);
             document.getElementById('noButton').style.left = `${x}px`;
             document.getElementById('noButton').style.top = `${y}px`;
             playAudio();
